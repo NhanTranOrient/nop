@@ -4,8 +4,18 @@
 
 ### DotnetCore ###
 # .NET Core build folders
-bin/
-obj/
+*.suo
+*.user
+*.sln.docstates
+
+# Build results
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
 
 # Common node modules locations
 /node_modules
