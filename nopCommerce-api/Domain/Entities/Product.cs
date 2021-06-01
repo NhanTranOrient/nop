@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace nopCommerce_api.Domain.Entities
+﻿namespace nopCommerce_api.Domain.Entities
 {
     public class Product
     {
