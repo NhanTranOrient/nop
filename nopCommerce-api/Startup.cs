@@ -6,6 +6,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using nopCommerce_api.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using nopCommerce_api.Application.Repositories.IRepositories;
+using nopCommerce_api.Application.Repositories;
+using nopCommerce_api.Application.Services.IServices;
+using nopCommerce_api.Application.Services;
 
 namespace nopCommerce_api
 {
@@ -35,6 +39,14 @@ namespace nopCommerce_api
                         sqlOptions.EnableRetryOnFailure();
                     });
             });
+
+            //Dependency Injection Repository
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+
+            //Dependency Injection Service
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICustomerService, CustomerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
